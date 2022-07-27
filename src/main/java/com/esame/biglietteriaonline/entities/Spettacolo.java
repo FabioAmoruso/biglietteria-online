@@ -21,12 +21,11 @@ public class Spettacolo {
     private String regista;
     private int prezzo;
 
-    @OneToOne
-    @MapsId
-    @JoinColumn(name = "cod_teatro", referencedColumnName = "cod_teatro")
-    private Teatro teatro;
+    @ManyToOne
+    @JoinColumn(name = "cod_teatro")
+    private Teatro codTeatro;
 
-    @OneToOne(mappedBy = "spettacolo")
-    private Replica replica;
+//    @OneToOne(mappedBy = "spettacolo")
+//    private Replica replica;
 
 }

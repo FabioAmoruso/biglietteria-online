@@ -21,6 +21,6 @@ public class Cliente {
     private String telefono;
     private String email;
 
-    @OneToMany(mappedBy = "cliente")
-    List<Biglietto> biglietti;
+//    @OneToMany(mappedBy = "cliente")
+//    List<Biglietto> biglietti;
 }

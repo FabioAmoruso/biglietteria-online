@@ -20,11 +20,11 @@ public class Biglietto {
 
     @ManyToOne
     @JoinColumn(name = "cod_cliente")
-    Cliente cliente;
+    private Cliente codCliente;
 
     @ManyToOne
     @JoinColumn(name = "cod_replica")
-    Replica replica;
+    private Replica codReplica;
 
     private LocalDateTime dataOra;
     private String tipoPagamento;

@@ -19,11 +19,10 @@ public class Replica {
     private String codReplica;
     private Date dataReplica;
 
-    @OneToMany(mappedBy = "replica")
-    List<Biglietto> biglietti;
+//    @OneToMany(mappedBy = "replica")
+//    List<Biglietto> biglietti;
 
-    @OneToOne
-    @MapsId
-    @JoinColumn(name = "cod_spettacolo", referencedColumnName = "cod_spettacolo")
+    @ManyToOne
+    @JoinColumn(name = "cod_spettacolo")
     private Spettacolo spettacolo;
 }

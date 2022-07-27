@@ -23,7 +23,7 @@ public class Teatro {
     private String telefono;
     private int posti;
 
-    @OneToOne(mappedBy = "teatro")
-    private Spettacolo spettacolo;
+//    @OneToOne(mappedBy = "teatro")
+//    private Spettacolo spettacolo;
 
 }

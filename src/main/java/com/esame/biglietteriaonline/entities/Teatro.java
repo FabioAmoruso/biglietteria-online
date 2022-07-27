@@ -15,7 +15,6 @@ public class Teatro {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "cod_teatro")
     private String codTeatro;
     private String nome;
     private String indirizzo;
@@ -24,6 +23,7 @@ public class Teatro {
     private String telefono;
     private int posti;
 
-    @OneToMany(mappedBy = "teatro")
-    private List<Spettacolo> spettacolo;
+    @OneToOne(mappedBy = "teatro")
+    private Spettacolo spettacolo;
+
 }

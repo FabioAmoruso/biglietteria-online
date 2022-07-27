@@ -16,18 +16,18 @@ public class Biglietto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "cod_operazione")
     private String codOperazione;
 
-    @ManyToMany
+    @ManyToOne
     @JoinColumn(name = "cod_cliente")
-    private List<Cliente> cliente;
+    Cliente cliente;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "cod_replica")
-    private Replica replica;
+    Replica replica;
 
-    private LocalDateTime data_ora;
+    private LocalDateTime dataOra;
     private String tipoPagamento;
     private int quantita;
+
 }

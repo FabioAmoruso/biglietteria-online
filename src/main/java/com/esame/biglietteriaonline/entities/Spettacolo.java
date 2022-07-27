@@ -15,17 +15,18 @@ public class Spettacolo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "cod_spettacolo")
     private String codSpettacolo;
     private String titolo;
     private String autore;
     private String regista;
     private int prezzo;
 
-    @ManyToOne
-    @JoinColumn(name = "cod_teatro")
+    @OneToOne
+    @MapsId
+    @JoinColumn(name = "cod_teatro", referencedColumnName = "cod_teatro")
     private Teatro teatro;
 
-    @ManyToMany(mappedBy = "spettacolo")
-    private List<Replica> replica;
+    @OneToOne(mappedBy = "spettacolo")
+    private Replica replica;
+
 }

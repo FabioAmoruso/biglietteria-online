@@ -3,7 +3,7 @@ package com.esame.biglietteriaonline.entities;
 import lombok.*;
 
 import javax.persistence.*;
-import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @Getter
@@ -16,14 +16,14 @@ public class Replica {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "cod_replica")
-    private String codRepliche;
-    private SimpleDateFormat data;
+    private String codReplica;
+    private Date dataReplica;
 
-    @ManyToMany
-    @JoinColumn(name = "cod_spettacolo")
-    private List<Spettacolo> spettacolo;
+    @OneToMany(mappedBy = "replica")
+    List<Biglietto> biglietti;
 
-    @OneToOne(mappedBy = "replica")
-    private Biglietto biglietto;
+    @OneToOne
+    @MapsId
+    @JoinColumn(name = "cod_spettacolo", referencedColumnName = "cod_spettacolo")
+    private Spettacolo spettacolo;
 }
